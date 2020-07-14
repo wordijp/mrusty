@@ -312,7 +312,7 @@ pub trait MrubyImpl {
     ///
     /// match result {
     ///     Err(MrubyError::Runtime(err)) => {
-    ///         assert_eq!(err, "script.rb:1: undefined method \'nope\' (NoMethodError)");
+    ///         assert_eq!(err, "undefined method \'nope\' (NoMethodError)");
     /// },
     ///     _ => assert!(false)
     /// }
@@ -342,7 +342,7 @@ pub trait MrubyImpl {
     ///
     /// match result {
     ///     Err(MrubyError::Runtime(err)) => {
-    ///         assert_eq!(err, "TypeError: Fixnum cannot be converted to String");
+    ///         assert_eq!(err, "Fixnum cannot be converted to String (TypeError)");
     /// },
     ///     _ => assert!(false)
     /// }
