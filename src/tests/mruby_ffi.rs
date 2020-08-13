@@ -44,8 +44,8 @@ fn exec_bin_context() {
 
         let bin = [
             // struct rite_binary_header
-            69u8, 84u8, 73u8, 82u8, // Binary identifier "RITE"
-            48u8, 48u8, 48u8, 54u8, // Binary format version "0006"
+            82u8, 73u8, 84u8, 69u8, // Binary identifier "RITE"
+            48u8, 48u8, 48u8, 55u8, // Binary format version "0007"
             204u8, 148u8,           // Binary CRC
             0u8, 0u8, 0u8, 69u8,    // Binary size
             77u8, 65u8, 84u8, 90u8, // Compiler name "MATZ"
@@ -64,6 +64,7 @@ fn exec_bin_context() {
 
             // ISEQ BLOCK
             0u8, 0u8, 0u8, 5u8,     // number of iseq
+
             // skip_padding target(nothing)
             8u8, 1u8, 55u8, 1u8, 103u8, // mrb_code * number of iseq
 
@@ -71,9 +72,9 @@ fn exec_bin_context() {
             0u8, 0u8, 0u8, 0u8,     // number of pool
 
             // SYMS BLOCK
-            0u8, 0u8, 0u8, 0u8, // syms length
+            0u8, 0u8, 0u8, 0u8,     // syms length
 
-            69u8, 78u8, 68u8, 0u8, // RITE_BINARY_EOF "END\0"
+            69u8, 78u8, 68u8, 0u8,  // RITE_BINARY_EOF "END\0"
             0u8, 0u8, 0u8, 8u8];
 
         let result = mrb_ext_load_irep_cxt_suppress_alignment(mrb, bin.as_ptr(), context);

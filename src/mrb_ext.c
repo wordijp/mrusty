@@ -56,8 +56,6 @@ read_binary_size(const uint8_t *bin, size_t *bin_size)
 
   if (memcmp(header->binary_ident, RITE_BINARY_IDENT, sizeof(header->binary_ident)) == 0) {
 	  // no-op
-  } else if (memcmp(header->binary_ident, RITE_BINARY_IDENT_LIL, sizeof(header->binary_ident)) == 0) {
-	  // no-op
   } else {
     return MRB_DUMP_INVALID_FILE_HEADER;
   }

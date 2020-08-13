@@ -256,7 +256,6 @@ pub enum MrType {
     MRB_TT_STRING,
     MRB_TT_RANGE,
     MRB_TT_EXCEPTION,
-    MRB_TT_FILE,
     MRB_TT_ENV,
     MRB_TT_DATA,
     MRB_TT_FIBER,
